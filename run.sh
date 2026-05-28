@@ -8,14 +8,27 @@ curl http://127.0.0.1:5000/get
 echo -e "\n===============POST Output==============="
 curl -X POST http://127.0.0.1:5000/post \
 -H "Content-Type: application/json" \
--d '{"name":"Naveen"}'
+-d '{"name":"Sector"}'
+
+curl -X POST http://127.0.0.1:5000/post \
+-H "Content-Type: application/json" \
+-d '{"name":"Nova"}'
+
+echo -e "\n After Post"
+curl http://127.0.0.1:5000/get
 
 echo -e "\n===============PUT Output=================="
 curl -X PUT http://127.0.0.1:5000/put/0 \
 -H "Content-Type: application/json" \
--d '{"name":"Arun"}'
+-d '{"name":"Noveda"}'
+
+echo -e "\n After Put"
+curl http://127.0.0.1:5000/get
 
 echo -e "\n=================DELETE Output==================="
 curl -X DELETE http://127.0.0.1:5000/delete/0
 
-echo -e "\nDone ✅"
+echo -e "\n After Delete"
+curl http://127.0.0.1:5000/get
+
+echo -e "\nDone"
